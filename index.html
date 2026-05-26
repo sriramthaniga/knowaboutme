@@ -2,210 +2,536 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sriram Thanigachalam - IT Infrastructure & Power Platform Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Sriram Thanigachalam – IT Infrastructure & Power Platform Engineer</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f0f2f5;
+            background: #eef2f5;
+            font-family: 'Inter', 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #1e2a3e;
+            padding: 32px 24px;
         }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+        /* main card container */
+        .resume-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            transition: all 0.2s ease;
         }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        /* header with gradient + professional touch */
+        .header {
+            background: linear-gradient(115deg, #0f2b3d 0%, #1b4a6e 100%);
+            padding: 2rem 2.5rem 1.8rem 2.5rem;
             color: white;
-            padding: 40px;
-            text-align: center;
         }
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
         }
-        header p {
-            font-size: 1.2em;
+
+        .header-tagline {
+            font-size: 1.1rem;
+            font-weight: 400;
             opacity: 0.9;
+            border-left: 3px solid #7ab7e0;
+            padding-left: 14px;
+            margin-top: 8px;
         }
-        .contact-info {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
+
+        /* contact strip */
+        .contact-strip {
+            background: #f8fafc;
+            padding: 0.9rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #1e4663;
+            align-items: center;
         }
-        .contact-info a {
-            color: #667eea;
+
+        .contact-strip a {
+            color: #1e6f9f;
             text-decoration: none;
-            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.2s;
         }
-        section {
-            padding: 30px 40px;
-            border-bottom: 1px solid #eee;
+
+        .contact-strip a:hover {
+            color: #0f3b55;
+            text-decoration: underline;
         }
-        h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-            padding-left: 15px;
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        .job {
-            margin-bottom: 25px;
+
+        /* sections */
+        .section {
+            padding: 1.8rem 2.5rem;
+            border-bottom: 1px solid #e9edf2;
         }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
+
+        .section:last-of-type {
+            border-bottom: none;
         }
-        .company {
-            color: #667eea;
+
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #0f2b3d;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .section-title span {
+            background: #eef2ff;
+            padding: 5px 10px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* summary text */
+        .summary-text {
+            font-size: 1rem;
+            color: #2c3e4e;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* expertise grid - 3 columns like word doc */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .expertise-card {
+            background: #f9fbfd;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #ecf3f8;
+            transition: all 0.2s;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1b4a6e;
+            margin-bottom: 1rem;
+            border-left: 3px solid #2c7cb6;
+            padding-left: 12px;
+        }
+
+        .expertise-card ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .expertise-card li {
+            margin: 0.6rem 0;
+            font-size: 0.92rem;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+
+        .expertise-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #2c7cb6;
             font-weight: 500;
         }
-        .date {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 10px;
+
+        /* job experience */
+        .job {
+            margin-bottom: 2rem;
         }
+
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f2b3d;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #2c7cb6;
+        }
+
+        .job-date {
+            font-size: 0.8rem;
+            color: #5f7f9c;
+            background: #f0f4f9;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+        }
+
+        .job-location {
+            font-size: 0.85rem;
+            color: #4b6f8c;
+            margin-bottom: 0.75rem;
+        }
+
+        .responsibilities {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .responsibilities li {
+            margin: 0.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .sub-project {
+            margin-top: 1rem;
+            padding-left: 1rem;
+            border-left: 2px dashed #cbdde9;
+        }
+
+        .sub-project strong {
+            color: #1b5a7e;
+        }
+
+        /* mini list style */
         ul {
-            margin-left: 20px;
+            list-style: none;
         }
-        li {
-            margin: 8px 0;
+
+        ul li {
+            margin: 0.5rem 0;
+            position: relative;
+            padding-left: 1.6rem;
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+
+        ul li::before {
+            content: "•";
+            color: #2c7cb6;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0.3rem;
         }
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
+
+        .skills-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
         }
-        .skill-category h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
+
+        .skill-badge {
+            background: #eef2ff;
+            color: #1e4663;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
+
+        /* soft skills row */
+        .soft-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .soft-skill {
+            background: #ffffff;
+            border: 1px solid #dfe8f0;
+            padding: 0.35rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1b4a6e;
+        }
+
+        .personal-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
         footer {
-            background: #333;
-            color: white;
+            background: #f1f5f9;
+            padding: 1rem 2.5rem;
             text-align: center;
-            padding: 20px;
+            font-size: 0.8rem;
+            color: #3d627d;
+            border-top: 1px solid #e2e8f0;
         }
-        @media (max-width: 768px) {
-            section {
-                padding: 20px;
+
+        footer a {
+            color: #1b6b93;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 750px) {
+            body {
+                padding: 16px;
             }
-            header h1 {
-                font-size: 1.8em;
+            .section {
+                padding: 1.4rem 1.5rem;
             }
+            .header h1 {
+                font-size: 1.9rem;
+            }
+            .contact-strip {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 0.8rem 1.5rem;
+            }
+            .job-header {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+
+        hr {
+            margin: 0.6rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+        }
+        .inline-icon {
+            font-size: 1rem;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="resume-card">
+        <!-- header -->
+        <div class="header">
             <h1>Sriram Thanigachalam</h1>
-            <p>IT Infrastructure Manager | Power Platform Specialist</p>
-        </header>
-        
-        <div class="contact-info">
-            📧 <a href="mailto:Sriram.thanigachalam@outlook.com">Sriram.thanigachalam@outlook.com</a> |
-            📞 +91 95971 07163 |
-            📍 Bengaluru, India
+            <div class="header-tagline">IT Infrastructure Manager | Power Platform Specialist</div>
         </div>
 
-        <section>
-            <h2>📋 Professional Summary</h2>
-            <p>IT Infrastructure & Power Platform Engineer with 10+ years of experience, including successful international infrastructure deployment (Malaysia), IT Service Management, and process automation. Skilled in Power Apps, Power Automate, VMware, Hyper-V, Backup Management, Firewall Management, and Infrastructure Monitoring. Proven ability to manage cross-border IT projects, vendor coordination, and service improvement.</p>
+        <!-- contact info exactly like doc -->
+        <div class="contact-strip">
+            <div class="contact-item">📧 <a href="mailto:Sriram.THANIGACHALAM@outlook.com">Sriram.THANIGACHALAM@outlook.com</a></div>
+            <div class="contact-item">📞 +91 95971 07163</div>
+            <div class="contact-item">📍 Bengaluru, Karnataka, India</div>
+            <div class="contact-item">🌐 Willing to Relocate/Travel: Yes</div>
+        </div>
+
+        <!-- professional summary -->
+        <section class="section">
+            <div class="section-title">
+                <span>📋</span> PROFESSIONAL SUMMARY
+            </div>
+            <p class="summary-text">IT Infrastructure & Power Platform Engineer with 10+ years of experience, including successful international infrastructure deployment (Malaysia), IT Service Management, and process automation. Skilled in Power Apps, Power Automate, VMware, Hyper-V, Backup Management, Firewall Management, and Infrastructure Monitoring. Proven ability to manage cross-border IT projects, vendor coordination, and service improvement.</p>
         </section>
 
-        <section>
-            <h2>💼 Work Experience</h2>
-            
-            <div class="job">
-                <div class="job-title">IT Infra Manager</div>
-                <div class="company">Sonovision Aetos Technical Service Pvt Ltd</div>
-                <div class="date">01/2024 - Present | Bengaluru, India</div>
-                <ul>
-                    <li>Managed end-to-end IT infrastructure operations ensuring high system availability</li>
-                    <li>Led Malaysia office IT infrastructure setup in 1 week - installed servers, VMware ESXi, backup solutions, and site-to-site VPN</li>
-                    <li>Shifted Pune office and streamlined IT processes during 6-month assignment</li>
-                    <li>Developed Power Apps applications eliminating manual Excel tracking and reducing 1 man-day/week</li>
-                </ul>
+        <!-- AREAS OF EXPERTISE (3 column grid as per word doc content) -->
+        <section class="section">
+            <div class="section-title">
+                <span>🛠️</span> AREAS OF EXPERTISE
             </div>
-
-            <div class="job">
-                <div class="job-title">IT & Network Admin Engineer</div>
-                <div class="company">Amphenol Interconnect India Pvt Ltd</div>
-                <div class="date">12/2022 - 01/2024 | Bengaluru, India</div>
-                <ul>
-                    <li>Designed IT infrastructure supporting 100+ users including LAN/WAN, VPN, and network security</li>
-                    <li>Deployed VMware ESXi virtualized server environments</li>
-                    <li>Implemented WSUS servers for centralized patch management</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-title">Junior System Administrator</div>
-                <div class="company">Amphenol Omniconnect India Pvt Ltd</div>
-                <div class="date">11/2015 - 10/2020 | Chennai, India</div>
-                <ul>
-                    <li>Managed Fortinet and Sophos firewalls including site-to-site VPN connectivity</li>
-                    <li>Implemented backup and disaster recovery solutions</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>🛠️ Areas of Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Infrastructure</h3>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>Infrastructure & Operations</h3>
                     <ul>
-                        <li>VMware ESXi / Hyper-V</li>
-                        <li>Windows Server & WSUS</li>
-                        <li>Fortinet/Sophos Firewalls</li>
-                        <li>LAN/WAN, VPN</li>
+                        <li>IT Infrastructure Planning, Enterprise IT Operations & Troubleshooting</li>
+                        <li>Fortinet & Sophos Firewall Management, Network Security & Disaster Recovery</li>
+                        <li>VMware ESXi, Hyper-V, Windows Server & WSUS Administration</li>
+                        <li>Backup, Storage & Virtualization Solutions</li>
+                        <li>LAN/WAN, VPN & Remote Access Support</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Automation</h3>
+                <div class="expertise-card">
+                    <h3>Leadership & Management</h3>
                     <ul>
-                        <li>Power Apps Development</li>
-                        <li>Power Automate Workflows</li>
-                        <li>SharePoint Online</li>
+                        <li>Daily Scrum Coordination & Team Management</li>
+                        <li>Intern Hiring, Training & 30-60-90 Day Training Planning</li>
+                        <li>Vendor Management, Cost Optimization & IT Service Delivery</li>
+                        <li>Policy, Compliance Management & Operational Reporting</li>
+                        <li>Leadership Support & Operational Coordination</li>
                     </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Monitoring & Tools</h3>
+                <div class="expertise-card">
+                    <h3>Automation & Monitoring</h3>
                     <ul>
-                        <li>Snipe-IT Asset Management</li>
-                        <li>NetBox Documentation</li>
-                        <li>Uptime Kuma Monitoring</li>
+                        <li>Power Apps Development & Power Automate Workflows</li>
+                        <li>SharePoint Online Integration & Workflow Automation</li>
+                        <li>Snipe-IT Asset Management & Asset Lifecycle Tracking</li>
+                        <li>NetBox Documentation & Infrastructure Documentation</li>
+                        <li>Uptime Kuma Infrastructure Monitoring</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2>📚 Education</h2>
-            <p><strong>Diploma in Computer Technology</strong><br>K.S. Rangasamy Institute of Technology | 2014</p>
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section class="section">
+            <div class="section-title">
+                <span>💼</span> PROFESSIONAL EXPERIENCE
+            </div>
+
+            <!-- Sonovision Aetos -->
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">IT Infra Manager</span> <span class="company">| Sonovision Aetos Technical Service Pvt Ltd</span></div>
+                    <div class="job-date">01/2024 – Present</div>
+                </div>
+                <div class="job-location">Bengaluru, India</div>
+                <ul class="responsibilities">
+                    <li>Managed end-to-end IT infrastructure operations and user support, ensuring high system availability and service continuity.</li>
+                    <li>Conducted daily scrum meetings and supported Incident, Service Request, and operational activities for IT Infrastructure services.</li>
+                    <li>Led intern onboarding, training, and structured 30-60-90 Day planning for IT support operations.</li>
+                    <li>Administered and maintained Snipe-IT, NetBox, and Uptime Kuma across lab and production environments.</li>
+                    <li>Prepared and presented weekly operational 4 Box Reports for service review and management reporting.</li>
+                </ul>
+                <div class="sub-project">
+                    <strong>🔹 Power Platform & Automation Projects:</strong>
+                    <ul style="margin-top: 6px;">
+                        <li>Developed Query Tracker using Power Apps – eliminated manual Excel tracking for production team.</li>
+                        <li>Developed Offer Contract Management using Power Apps – removed hard copy storage and Excel tracking.</li>
+                        <li>Implemented Power Automate workflows for Job Folder creation & notifications – reduced 1 man-day/week.</li>
+                        <li>Integrated SharePoint Online with Power Platform – enhanced workflow automation & document management.</li>
+                    </ul>
+                </div>
+                <div class="sub-project">
+                    <strong>🔹 Infrastructure Projects:</strong>
+                    <ul style="margin-top: 6px;">
+                        <li>Led Malaysia office IT infrastructure setup – visited Malaysia for one week to install servers, Hyper-V, backup solutions, and site-to-site VPN. Documented full infrastructure in NetBox.</li>
+                        <li>Shifted Pune office and streamlined IT infra processes – 6 months assignment to manage office shifting and establish streamlined operations.</li>
+                        <li>Executed hardware refresh in Bangalore – upgraded server and storage hardware for reliability & efficiency.</li>
+                        <li>Bangalore office shifting (in progress) – managing office migration to ensure continuous IT service availability.</li>
+                        <li>End-to-end IT infrastructure deployment for new Malaysia office, including server hardware selection, rack mounting, and network topology design.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Amphenol Interconnect -->
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">IT & Network Admin Engineer</span> <span class="company">| Amphenol Interconnect India Pvt Ltd (Times Microwave Systems)</span></div>
+                    <div class="job-date">12/2022 – 01/2024</div>
+                </div>
+                <div class="job-location">Bengaluru, India</div>
+                <ul class="responsibilities">
+                    <li>Designed and managed IT infrastructure operations supporting over 100 users including LAN/WAN, VPN, and network security services.</li>
+                    <li>Administered NAS storage solutions to ensure high availability, centralized data management, and business continuity.</li>
+                    <li>Collaborated with leadership teams to assess IT service requirements and implement infrastructure improvements.</li>
+                    <li>Managed vendor coordination and contract negotiations to optimize operational costs and service delivery efficiency.</li>
+                    <li>Deployed VMware ESXi virtualized server environments to improve resource utilization, scalability.</li>
+                    <li>Implemented WSUS servers for centralized patch management and proactively resolved update compliance issues.</li>
+                    <li>Deployed Poly Studio X50 video conferencing solutions and improved service reliability through preventive maintenance.</li>
+                </ul>
+            </div>
+
+            <!-- Amphenol Omniconnect -->
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">Junior System Administrator</span> <span class="company">| Amphenol Omniconnect India Pvt Ltd</span></div>
+                    <div class="job-date">11/2015 – 10/2020</div>
+                </div>
+                <div class="job-location">Chennai, India</div>
+                <ul class="responsibilities">
+                    <li>Installed and configured Windows servers and supported LAN/WAN infrastructure for new facility setups.</li>
+                    <li>Managed Fortinet and Sophos firewalls including site-to-site VPN connectivity across multiple locations.</li>
+                    <li>Implemented backup and disaster recovery solutions to ensure infrastructure availability and data protection.</li>
+                    <li>Performed system monitoring, patch management, and preventive maintenance activities.</li>
+                    <li>Managed network devices and supported enterprise security operations.</li>
+                </ul>
+            </div>
+
+            <!-- Yi Networks -->
+            <div class="job">
+                <div class="job-header">
+                    <div><span class="job-title">Desktop Support Engineer</span> <span class="company">| Yi Networks</span></div>
+                    <div class="job-date">07/2014 – 10/2015</div>
+                </div>
+                <div class="job-location">Chennai, India</div>
+                <ul class="responsibilities">
+                    <li>Provided end-user support for hardware, software, and network-related incidents.</li>
+                    <li>Installed and upgraded operating systems and enterprise applications.</li>
+                    <li>Configured user accounts, permissions, and access management activities.</li>
+                    <li>Monitored daily system performance and resolved technical support requests.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- EDUCATION -->
+        <section class="section">
+            <div class="section-title">
+                <span>🎓</span> EDUCATION
+            </div>
+            <div><strong>Diploma in Computer Technology</strong><br>K.S. Rangasamy Institute of Technology | 2014</div>
+        </section>
+
+        <!-- SOFT SKILLS (exactly as per word doc) -->
+        <section class="section">
+            <div class="section-title">
+                <span>🧠</span> SOFT SKILLS
+            </div>
+            <div class="soft-skills-list">
+                <span class="soft-skill">Leadership & Team Coordination</span>
+                <span class="soft-skill">Communication Skills</span>
+                <span class="soft-skill">Problem Solving</span>
+                <span class="soft-skill">Analytical Thinking</span>
+                <span class="soft-skill">Planning & Execution</span>
+                <span class="soft-skill">Adaptability</span>
+                <span class="soft-skill">Team Collaboration</span>
+            </div>
+        </section>
+
+        <!-- PERSONAL DETAILS + LANGUAGES -->
+        <section class="section">
+            <div class="section-title">
+                <span>👤</span> PERSONAL DETAILS
+            </div>
+            <div class="personal-row">
+                <div><strong>Languages Known:</strong> Tamil, English & Kannada</div>
+                <div><strong>Willing to Relocate / Travel:</strong> Yes</div>
+            </div>
+        </section>
+
+        <!-- footer / similar to doc final line -->
         <footer>
-            <p>🔗 Connect with me on <a href="YOUR_LINKEDIN_URL" style="color:white">LinkedIn</a> | 📧 Sriram.thanigachalam@outlook.com</p>
-            <p>© 2026 Sriram Thanigachalam</p>
+            🔗 Connect with me on 
+            <a href="#" target="_blank">LinkedIn</a> 
+            | 📧 <a href="mailto:Sriram.thanigachalam@outlook.com">Sriram.thanigachalam@outlook.com</a> 
+            | © 2026 Sriram Thanigachalam
         </footer>
     </div>
 </body>
