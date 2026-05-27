@@ -397,131 +397,387 @@
         </section>
 
         <!-- Areas of expertise (3 columns modern) -->
-        <section class="section">
-            <div class="section-title">
-                <span>🛠️</span> AREAS OF EXPERTISE
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h3>Infrastructure & Operations</h3>
-                    <ul>
-                        <li>IT Infrastructure Planning & Enterprise IT Ops</li>
-                        <li>Fortinet & Sophos Firewall Management</li>
-                        <li>VMware ESXi, Hyper-V, Windows Server & WSUS</li>
-                        <li>Backup, Storage & Virtualization</li>
-                        <li>LAN/WAN, VPN & Remote Access</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3>Leadership & Management</h3>
-                    <ul>
-                        <li>Daily Scrum Coordination & Team Management</li>
-                        <li>Intern Hiring, Training & 30-60-90 Planning</li>
-                        <li>Vendor Management & Cost Optimization</li>
-                        <li>Policy Compliance & Operational Reporting</li>
-                        <li>Leadership Support & Cross-border Projects</li>
-                    </ul>
-                </div>
-                <div class="expertise-card">
-                    <h3>Automation & Monitoring</h3>
-                    <ul>
-                        <li>Power Apps Development & Power Automate</li>
-                        <li>SharePoint Online Integration</li>
-                        <li>Snipe-IT Asset Management</li>
-                        <li>NetBox Documentation & Uptime Kuma</li>
-                        <li>Infrastructure Monitoring & Analytics</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                <section class="section" id="areas-of-expertise">
+                    <div class="section-title">
+                        <span>🛠️</span> AREAS OF EXPERTISE
+                    </div>
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <h3><button class="expertise-btn" data-target="exp-1" aria-expanded="false">Infrastructure & Operations</button></h3>
+                            <ul id="exp-1">
+                                <li>IT Infrastructure Planning & Enterprise IT Ops</li>
+                                <li>Fortinet & Sophos Firewall Management</li>
+                                <li>VMware ESXi, Hyper-V, Windows Server & WSUS</li>
+                                <li>Backup, Storage & Virtualization</li>
+                                <li>LAN/WAN, VPN & Remote Access</li>
+                            </ul>
+                        </div>
+                        <div class="expertise-card">
+                            <h3><button class="expertise-btn" data-target="exp-2" aria-expanded="false">Leadership & Management</button></h3>
+                            <ul id="exp-2">
+                                <li>Daily Scrum Coordination & Team Management</li>
+                                <li>Intern Hiring, Training & 30-60-90 Planning</li>
+                                <li>Vendor Management & Cost Optimization</li>
+                                <li>Policy Compliance & Operational Reporting</li>
+                                <li>Leadership Support & Cross-border Projects</li>
+                            </ul>
+                        </div>
+                        <div class="expertise-card">
+                            <h3><button class="expertise-btn" data-target="exp-3" aria-expanded="false">Automation & Monitoring</button></h3>
+                            <ul id="exp-3">
+                                <li>Power Apps Development & Power Automate</li>
+                                <li>SharePoint Online Integration</li>
+                                <li>Snipe-IT Asset Management</li>
+                                <li>NetBox Documentation & Uptime Kuma</li>
+                                <li>Infrastructure Monitoring & Analytics</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <!-- Professional experience (fully detailed) -->
-        <section class="section">
-            <div class="section-title">
-                <span>💼</span> PROFESSIONAL EXPERIENCE
-            </div>
+                    <!-- Modal & backdrop (inserted once) -->
+                    <div id="expertise-backdrop" class="backdrop" hidden></div>
+                    <div id="expertise-modal" class="expertise-modal" role="dialog" aria-modal="true" hidden>
+                        <button id="expertise-close" class="expertise-close" aria-label="Close">×</button>
+                        <div id="expertise-modal-content" class="expertise-modal-content"></div>
+                    </div>
+                </section>
 
-            <!-- Sonovision Aetos -->
-            <div class="job">
-                <div class="job-header">
-                    <div><span class="job-title">IT Infra Manager</span> <span class="company">| Sonovision Aetos Technical Service Pvt Ltd</span></div>
-                    <div class="job-date">01/2024 – Present</div>
-                </div>
-                <div class="job-location">📍 Bengaluru, India</div>
-                <ul class="responsibilities">
-                    <li>Managed end-to-end IT infrastructure operations, system availability & service continuity.</li>
-                    <li>Conducted daily scrum meetings, Incident & Service Request management for global IT services.</li>
-                    <li>Led intern onboarding, structured 30-60-90 day training for support teams.</li>
-                    <li>Administered Snipe-IT, NetBox, Uptime Kuma across lab & production environments.</li>
-                    <li>Presented weekly operational 4 Box Reports to leadership.</li>
-                </ul>
-                <div class="sub-project">
-                    <strong>🔹 Power Platform & Automation:</strong>
-                    <ul>
-                        <li>Query Tracker Power App – eliminated manual Excel tracking for production team.</li>
-                        <li>Offer Contract Management Power App – replaced hard copy storage & Excel tracking.</li>
-                        <li>Power Automate workflows for Job Folder creation & notifications – saved 1 man-day/week.</li>
-                        <li>SharePoint Online + Power Platform integration for automated document workflows.</li>
-                    </ul>
-                </div>
-                <div class="sub-project">
-                    <strong>🔹 Infrastructure Projects:</strong>
-                    <ul>
-                        <li>Led Malaysia office setup: servers, Hyper-V, backup, site-to-site VPN (1-week deployment).</li>
-                        <li>Shifted Pune office & streamlined IT processes during 6-month assignment.</li>
-                        <li>Bangalore hardware refresh (servers & storage) – improved reliability & performance.</li>
-                        <li>Ongoing Bangalore office migration ensuring zero-downtime transition.</li>
-                        <li>Full infrastructure documentation using NetBox for Malaysia facility.</li>
-                    </ul>
-                </div>
-            </div>
+                <style>
+                /* Basic layout */
+                .expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+                .expertise-card{padding:1rem;border-radius:6px}
 
-            <!-- Amphenol Interconnect -->
-            <div class="job">
-                <div class="job-header">
-                    <div><span class="job-title">IT & Network Admin Engineer</span> <span class="company">| Amphenol Interconnect India Pvt Ltd (Times Microwave Systems)</span></div>
-                    <div class="job-date">12/2022 – 01/2024</div>
-                </div>
-                <div class="job-location">📍 Bengaluru, India</div>
-                <ul>
-                    <li>Designed IT infrastructure for 100+ users (LAN/WAN, VPN, network security).</li>
-                    <li>Managed NAS storage for high availability & business continuity.</li>
-                    <li>Collaborated with leadership on IT service improvements & vendor negotiations.</li>
-                    <li>Deployed VMware ESXi environments & WSUS for centralized patch management.</li>
-                    <li>Implemented Poly Studio X50 video conferencing & preventive maintenance.</li>
-                </ul>
-            </div>
+                /* Headings act as buttons */
+                .expertise-btn{background:none;border:none;padding:0;font-size:1.1rem;font-weight:700;cursor:pointer;color:inherit}
 
-            <!-- Amphenol Omniconnect -->
-            <div class="job">
-                <div class="job-header">
-                    <div><span class="job-title">Junior System Administrator</span> <span class="company">| Amphenol Omniconnect India Pvt Ltd</span></div>
-                    <div class="job-date">11/2015 – 10/2020</div>
-                </div>
-                <div class="job-location">📍 Chennai, India</div>
-                <ul>
-                    <li>Installed Windows servers, supported LAN/WAN infrastructure for new facilities.</li>
-                    <li>Managed Fortinet & Sophos firewalls including site-to-site VPN.</li>
-                    <li>Implemented backup & disaster recovery solutions for data protection.</li>
-                    <li>System monitoring, patch management & enterprise security operations.</li>
-                </ul>
-            </div>
+                /* Hide bullet lists on screen; they'll appear in modal. */
+                .expertise-card ul{display:none;margin:0.5rem 0 0 1rem}
 
-            <!-- Yi Networks -->
-            <div class="job">
-                <div class="job-header">
-                    <div><span class="job-title">Desktop Support Engineer</span> <span class="company">| Yi Networks</span></div>
-                    <div class="job-date">07/2014 – 10/2015</div>
-                </div>
-                <div class="job-location">📍 Chennai, India</div>
-                <ul>
-                    <li>Provided end-user support for hardware, software & network incidents.</li>
-                    <li>Performed OS upgrades, enterprise app installations & user access management.</li>
-                    <li>Monitored daily system performance and resolved technical tickets.</li>
-                </ul>
-            </div>
-        </section>
+                /* Backdrop and blur */
+                .backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.25);backdrop-filter:blur(3px);z-index:998}
+                .blurred{filter:blur(4px);opacity:0.9}
 
+                /* Modal styling */
+                .expertise-modal{position:absolute;z-index:999;min-width:260px;max-width:420px;background:#fff;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.2);padding:1rem}
+                .expertise-modal-content{color:#111}
+                .expertise-close{position:absolute;top:6px;right:8px;background:none;border:none;font-size:20px;cursor:pointer}
+
+                /* Small screens: center modal */
+                @media (max-width:640px){.expertise-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:90%;max-width:90%}}
+
+                /* Print: show all lists under headings and hide modal/backdrop */
+                @media print{
+                    .expertise-btn{all:unset;display:block;font-size:1.1rem;font-weight:700}
+                    .expertise-card ul{display:block !important}
+                    .backdrop,.expertise-modal,.expertise-close{display:none !important}
+                }
+                </style>
+
+                <script>
+                (function(){
+                    const buttons = document.querySelectorAll('.expertise-btn');
+                    const modal = document.getElementById('expertise-modal');
+                    const modalContent = document.getElementById('expertise-modal-content');
+                    const backdrop = document.getElementById('expertise-backdrop');
+                    const closeBtn = document.getElementById('expertise-close');
+                    const grid = document.querySelector('.expertise-grid');
+
+                    function openModal(targetId, anchorRect){
+                        const list = document.getElementById(targetId);
+                        if(!list) return;
+                        // Clone list content into modal
+                        modalContent.innerHTML = '';
+                        const clone = list.cloneNode(true);
+                        clone.style.display = 'block';
+                        modalContent.appendChild(clone);
+
+                        // Position modal under the heading (anchorRect)
+                        const modalWidth = Math.min(420, Math.max(260, anchorRect.width));
+                        modal.style.width = modalWidth + 'px';
+                        const left = Math.max(8, anchorRect.left + window.scrollX);
+                        const top = anchorRect.bottom + window.scrollY + 8;
+                        modal.style.left = left + 'px';
+                        modal.style.top = top + 'px';
+
+                        backdrop.hidden = false; modal.hidden = false;
+                        grid.classList.add('blurred');
+                        document.body.style.overflow = 'hidden';
+                        list.setAttribute('aria-hidden','true');
+                    }
+
+                    function closeModal(){
+                        backdrop.hidden = true; modal.hidden = true;
+                        grid.classList.remove('blurred');
+                        document.body.style.overflow = '';
+                        modalContent.innerHTML = '';
+                    }
+
+                    buttons.forEach(btn=>{
+                        btn.addEventListener('click', function(e){
+                            const target = btn.dataset.target;
+                            // If printing, let default reveal happen
+                            if(window.matchMedia && window.matchMedia('print').matches) return;
+                            const rect = btn.getBoundingClientRect();
+                            openModal(target, rect);
+                            btn.setAttribute('aria-expanded','true');
+                        });
+                    });
+
+                    closeBtn.addEventListener('click', closeModal);
+                    backdrop.addEventListener('click', closeModal);
+                    window.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+                    // Ensure that when printing, lists are visible under headings (no JS needed beyond CSS), but
+                    // if user triggers print while modal open, close it.
+                    window.matchMedia('print').addListener(function(m){ if(m.matches) closeModal(); });
+                })();
+                </script>
+
+    <!-- Professional experience (fully detailed) -->
+            <section class="section">
+                <style>
+                    .section-title { margin-bottom: 12px; }
+                    .job { border-bottom:1px solid #e0e0e0; padding:12px 0; position:relative; }
+                    .job-header { font-weight:600; margin-bottom:6px; }
+                    .company { display:block; font-size:1.05em; }
+                    .designation { color:#333; }
+                    .job-date, .job-location { color:#666; font-size:0.95em; }
+
+                    /* Responsibilities hover-expand panel */
+                    .responsibilities-panel { max-height:0; overflow:hidden; transition: max-height .28s ease; }
+                    .responsibilities-panel h4 { margin:8px 0; }
+                    .job:hover .responsibilities-panel { max-height:800px; }
+
+                    /* Projects link: hidden by default, shown when the job is hovered */
+                    .projects-link { display:none; color:#0066cc; text-decoration:underline; cursor:pointer; margin-left:8px; font-size:0.95em }
+                    .job:hover .projects-link { display:inline-block }
+
+                    /* Modal overlay and content */
+                    .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35); backdrop-filter: blur(4px); z-index:9998; }
+                    .modal-overlay.open { display:block; }
+                    .modal { position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); background:#fff; padding:18px; width:90%; max-width:720px; box-shadow:0 8px 24px rgba(0,0,0,.2); z-index:9999; border-radius:6px; }
+                    .modal .close { position:absolute; right:10px; top:8px; background:transparent; border:none; font-size:18px; cursor:pointer }
+                    .modal h3 { margin-top:6px }
+                    .modal-section { margin-bottom:12px }
+
+                    /* Print rules: expand responsibilities and show projects inline */
+                    @media print {
+                        .responsibilities-panel { max-height:none !important; }
+                        .projects-link { display:none !important; }
+                        .print-projects { display:block !important; margin-top:8px }
+                        .modal-overlay, .modal { display:none !important; }
+                    }
+
+                    /* Hide print-projects on screen */
+                    .print-projects { display:none; }
+                </style>
+
+                <div class="section-title">
+                    <span>💼</span> PROFESSIONAL EXPERIENCE
+                </div>
+
+                <!-- Sonovision Aetos -->
+                <div class="job" data-company="sonovision">
+                    <div class="job-header">
+                        <span class="company">Sonovision Aetos Technical Service Pvt Ltd</span>
+                        <div class="designation">IT Infra Manager</div>
+                        <div class="job-date">01/2024 – Present</div>
+                    </div>
+                    <div class="job-location">📍 Bengaluru, India</div>
+
+                    <div class="responsibilities-panel" aria-hidden="false">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Managed end-to-end IT infrastructure operations, system availability & service continuity.</li>
+                            <li>Conducted daily scrum meetings, Incident & Service Request management for global IT services.</li>
+                            <li>Led intern onboarding, structured 30-60-90 day training for support teams.</li>
+                            <li>Administered Snipe-IT, NetBox, Uptime Kuma across lab & production environments.</li>
+                            <li>Presented weekly operational 4 Box Reports to leadership.</li>
+                        </ul>
+                    </div>
+
+                    <a class="projects-link" data-target="modal-sonovision">Key Projects</a>
+
+                    <!-- Print-only projects (appear directly under company for PDF/print) -->
+                    <div class="print-projects">
+                        <strong>Power Platform & Automation</strong>
+                        <ul>
+                            <li>Query Tracker Power App – eliminated manual Excel tracking for production team.</li>
+                            <li>Offer Contract Management Power App – replaced hard copy storage & Excel tracking.</li>
+                            <li>Power Automate workflows for Job Folder creation & notifications – saved 1 man-day/week.</li>
+                            <li>SharePoint Online + Power Platform integration for automated document workflows.</li>
+                        </ul>
+                        <strong>Infrastructure</strong>
+                        <ul>
+                            <li>Led Malaysia office setup: servers, Hyper-V, backup, site-to-site VPN (1-week deployment).</li>
+                            <li>Shifted Pune office & streamlined IT processes during 6-month assignment.</li>
+                            <li>Bangalore hardware refresh (servers & storage) – improved reliability & performance.</li>
+                            <li>Ongoing Bangalore office migration ensuring zero-downtime transition.</li>
+                            <li>Full infrastructure documentation using NetBox for Malaysia facility.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal for Sonovision -->
+                <div id="modal-sonovision" class="modal-overlay" role="dialog" aria-modal="true">
+                    <div class="modal" role="document">
+                        <button class="close" aria-label="Close">✕</button>
+                        <h3>Sonovision Aetos — Key Projects</h3>
+                        <div class="modal-section">
+                            <strong>Infrastructure</strong>
+                            <ul>
+                                <li>Led Malaysia office setup: servers, Hyper-V, backup, site-to-site VPN (1-week deployment).</li>
+                                <li>Shifted Pune office & streamlined IT processes during 6-month assignment.</li>
+                                <li>Bangalore hardware refresh (servers & storage) – improved reliability & performance.</li>
+                                <li>Ongoing Bangalore office migration ensuring zero-downtime transition.</li>
+                                <li>Full infrastructure documentation using NetBox for Malaysia facility.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-section">
+                            <strong>Power Platform & Automation</strong>
+                            <ul>
+                                <li>Query Tracker Power App – eliminated manual Excel tracking for production team.</li>
+                                <li>Offer Contract Management Power App – replaced hard copy storage & Excel tracking.</li>
+                                <li>Power Automate workflows for Job Folder creation & notifications – saved 1 man-day/week.</li>
+                                <li>SharePoint Online + Power Platform integration for automated document workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amphenol Interconnect -->
+                <div class="job" data-company="amphenol-interconnect">
+                    <div class="job-header">
+                        <span class="company">Amphenol Interconnect India Pvt Ltd (Times Microwave Systems)</span>
+                        <div class="designation">IT & Network Admin Engineer</div>
+                        <div class="job-date">12/2022 – 01/2024</div>
+                    </div>
+                    <div class="job-location">📍 Bengaluru, India</div>
+
+                    <div class="responsibilities-panel">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Designed IT infrastructure for 100+ users (LAN/WAN, VPN, network security).</li>
+                            <li>Managed NAS storage for high availability & business continuity.</li>
+                            <li>Collaborated with leadership on IT service improvements & vendor negotiations.</li>
+                            <li>Deployed VMware ESXi environments & WSUS for centralized patch management.</li>
+                            <li>Implemented Poly Studio X50 video conferencing & preventive maintenance.</li>
+                        </ul>
+                    </div>
+
+                    <a class="projects-link" data-target="modal-amphenol-interconnect">Key Projects</a>
+
+                    <div class="print-projects">
+                        <strong>Infrastructure Initiatives</strong>
+                        <ul>
+                            <li>Designed IT infrastructure for 100+ users (LAN/WAN, VPN, network security).</li>
+                            <li>Managed NAS storage for high availability & business continuity.</li>
+                            <li>Deployed VMware ESXi environments & WSUS for centralized patch management.</li>
+                            <li>Implemented Poly Studio X50 video conferencing & preventive maintenance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modal for Amphenol Interconnect -->
+                <div id="modal-amphenol-interconnect" class="modal-overlay" role="dialog" aria-modal="true">
+                    <div class="modal" role="document">
+                        <button class="close" aria-label="Close">✕</button>
+                        <h3>Amphenol Interconnect — Key Projects</h3>
+                        <div class="modal-section">
+                            <strong>Infrastructure Initiatives</strong>
+                            <ul>
+                                <li>Designed IT infrastructure for 100+ users (LAN/WAN, VPN, network security).</li>
+                                <li>Managed NAS storage for high availability & business continuity.</li>
+                                <li>Collaborated with leadership on IT service improvements & vendor negotiations.</li>
+                                <li>Deployed VMware ESXi environments & WSUS for centralized patch management.</li>
+                                <li>Implemented Poly Studio X50 video conferencing & preventive maintenance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amphenol Omniconnect -->
+                <div class="job" data-company="amphenol-omniconnect">
+                    <div class="job-header">
+                        <span class="company">Amphenol Omniconnect India Pvt Ltd</span>
+                        <div class="designation">Junior System Administrator</div>
+                        <div class="job-date">11/2015 – 10/2020</div>
+                    </div>
+                    <div class="job-location">📍 Chennai, India</div>
+
+                    <div class="responsibilities-panel">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Installed Windows servers, supported LAN/WAN infrastructure for new facilities.</li>
+                            <li>Managed Fortinet & Sophos firewalls including site-to-site VPN.</li>
+                            <li>Implemented backup & disaster recovery solutions for data protection.</li>
+                            <li>System monitoring, patch management & enterprise security operations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="print-projects">
+                        <strong>Infrastructure</strong>
+                        <ul>
+                            <li>Installed Windows servers, supported LAN/WAN infrastructure for new facilities.</li>
+                            <li>Managed Fortinet & Sophos firewalls including site-to-site VPN.</li>
+                            <li>Implemented backup & disaster recovery solutions for data protection.</li>
+                            <li>System monitoring, patch management & enterprise security operations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- (No modal required for Amphenol Omniconnect) -->
+
+                <!-- Yi Networks -->
+                <div class="job" data-company="yi-networks">
+                    <div class="job-header">
+                        <span class="company">Yi Networks</span>
+                        <div class="designation">Desktop Support Engineer</div>
+                        <div class="job-date">07/2014 – 10/2015</div>
+                    </div>
+                    <div class="job-location">📍 Chennai, India</div>
+
+                    <div class="responsibilities-panel">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Provided end-user support for hardware, software & network incidents.</li>
+                            <li>Performed OS upgrades, enterprise app installations & user access management.</li>
+                            <li>Monitored daily system performance and resolved technical tickets.</li>
+                        </ul>
+                    </div>
+
+                    <div class="print-projects">
+                        <strong>Infrastructure</strong>
+                        <ul>
+                            <li>Provided end-user support for hardware, software & network incidents.</li>
+                            <li>Performed OS upgrades, enterprise app installations & user access management.</li>
+                            <li>Monitored daily system performance and resolved technical tickets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- (No modal required for Yi Networks) -->
+
+                <script>
+                    // Open modal when projects link clicked
+                    document.querySelectorAll('.projects-link').forEach(function(link){
+                        link.addEventListener('click', function(){
+                            var target = this.getAttribute('data-target');
+                            var modal = document.getElementById(target);
+                            if(modal) modal.classList.add('open');
+                        });
+                    });
+
+                    // Close modal when clicking overlay or close button
+                    document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+                        overlay.addEventListener('click', function(e){
+                            if(e.target === this) this.classList.remove('open');
+                        });
+                        var btn = overlay.querySelector('.close');
+                        if(btn) btn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+                    });
+                </script>
+            </section>
         <!-- Education -->
         <section class="section">
             <div class="section-title">
@@ -566,7 +822,7 @@
         <div class="purple-footer">
             🔗 Connect with me on <a href="https://www.linkedin.com/in/sriramthanigachalam/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;|&nbsp;
             📧 <a href="mailto:Sriram.thanigachalam@outlook.com?subject=Opportunity%20at%20%5BCompany%5D%20%E2%80%94%20%5BRole%5D%20that%20matches%20your%20background&body=Hi%20Sriram%2C%0D%0A%0D%0AI%20reviewed%20your%20profile%20and%20experience%20in%20%5Bskill%2Farea%5D.%0D%0A%0D%0AWe%20have%20a%20%5Brole%5D%20at%20%5BCompany%5D%20that%20fits%20your%20background.%0D%0A%0D%0AWould%20you%20be%20open%20to%20a%2015%E2%80%9320%20minute%20call%20to%20discuss%3F%20Please%20share%20availability.%0D%0A%0D%0ARegards%2C%20%5BRecruiter%20Name%5D" target="_blank" rel="noopener noreferrer">Email me</a> &nbsp;|&nbsp;
-            © 2026 Sriram Thanigachalam
+            <br>© 2026 Sriram THANIGACHALAM. All rights reserved.
         </div>
     </div>
 </body>
